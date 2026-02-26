@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.appmessagerie.client.ChatController">
+    <!-- Sidebar - Liste des utilisateurs -->
+    <VBox prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+        <Label text="Utilisateurs">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </Label>
+        <ListView fx:id="userListView" VBox.vgrow="ALWAYS" style="-fx-background-radius: 5;" />
+        <Button text="Déconnexion" onAction="#handleLogout" maxWidth="Infinity" style="-fx-background-color: #ff4444; -fx-text-fill: white; -fx-margin-top: 10;">
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+
+    <!-- Main Chat Area -->
+    <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: #efeae2;">
+        <!-- Chat Header -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #ffffff; -fx-padding: 10; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+            <Label fx:id="chatTitleLabel" text="Sélectionnez un utilisateur">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Messages Area -->
+        <ListView fx:id="messageListView" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;" />
+
+        <!-- Input Area -->
+        <HBox spacing="10.0" style="-fx-background-color: #f0f2f5; -fx-padding: 10;">
+            <TextField fx:id="messageInput" HBox.hgrow="ALWAYS" promptText="Tapez un message..." style="-fx-padding: 10; -fx-background-radius: 20;" onAction="#handleSendMessage" />
+            <Button text="Envoyer" onAction="#handleSendMessage" style="-fx-background-color: #00a884; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 20; -fx-font-weight: bold;" />
+        </HBox>
+    </VBox>
+</HBox>

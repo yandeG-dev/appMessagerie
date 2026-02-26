@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.appmessagerie.client.LoginController" style="-fx-background-color: #f0f2f5;">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <Label text="Connexion Messagerie">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <VBox spacing="10.0" maxWidth="300.0">
+        <TextField fx:id="usernameField" promptText="Nom d'utilisateur" style="-fx-padding: 10; -fx-background-radius: 5;" />
+        <PasswordField fx:id="passwordField" promptText="Mot de passe" style="-fx-padding: 10; -fx-background-radius: 5;" />
+    </VBox>
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Se connecter" onAction="#handleLogin" prefWidth="120.0" style="-fx-background-color: #0084ff; -fx-text-fill: white; -fx-padding: 10; -fx-background-radius: 5; -fx-font-weight: bold;" />
+        <Button text="S'inscrire" onAction="#handleRegister" prefWidth="120.0" style="-fx-background-color: #42b72a; -fx-text-fill: white; -fx-padding: 10; -fx-background-radius: 5; -fx-font-weight: bold;" />
+    </HBox>
+
+    <Label fx:id="statusLabel" textFill="RED" />
+</VBox>
