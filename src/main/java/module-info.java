@@ -1,6 +1,10 @@
 module org.example.appmessagerie {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.logging;
+    requires jbcrypt;
+    requires static lombok;
+    requires java.persistence;
 
 
     opens org.example.appmessagerie to javafx.fxml;
