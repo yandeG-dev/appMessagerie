@@ -4,6 +4,7 @@ module org.example.appmessagerie {
     requires java.logging;
     requires static lombok;
     requires java.persistence;
+    requires jbcrypt;
 
 
     opens org.example.appmessagerie to javafx.fxml;
